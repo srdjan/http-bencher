@@ -18,7 +18,7 @@ fastify.get('/', (req, rep) => {
 //   rep.send(big)
 // })
 
-fastify.listen(3000, (err, address) => {
+fastify.listen(port, (err, address) => {
   if (err) throw err
   fastify.log.info(`server listening on ${address}`)
 })

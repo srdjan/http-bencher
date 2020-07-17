@@ -1,2 +1,2 @@
-sleep 1
-wrk -t12 -c400 -d2s http://0.0.0.0:8010 > ./results/$1
+sleep 0.5
+wrk -t12 -c400 -d5s http://0.0.0.0:$1 > ./results/$2.md

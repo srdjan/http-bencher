@@ -1,16 +1,16 @@
 {
-  "name": "bench",
+  "name": "bencher",
   "description": "Benching http servers",
   "version": "0.0.1",
   "author": "SrdjanS <https://github.com/srdjan>",
-  "homepage": "https://github.com/srdjan",
+  "homepage": "https://github.com/srdjan/bencher",
   "devDependencies": {
     "@fearless/cors": "0.1.4",
     "@fearless/json": "0.1.0",
     "@fearless/listen": "0.1.0",
     "@fearless/fearless": "0.1.1",
     "express": "4.17.1",
-    "fastify": "3.0.3"
+    "fastify": "3.1.1"
   },
   "keywords": [
     "http",
@@ -21,10 +21,10 @@
   ],
   "license": "MIT",
   "scripts": {
-    "clear": "rm -rf package.lock node_modules && npm i",
-    "deno": "bash ./scripts/deno.sh 8010 & bash ./scripts/clients.sh deno.md",
-    "express": "bash ./scripts/express.sh 8010 & bash ./scripts/clients.sh express.md",
-    "fastify": "bash ./scripts/fastify.sh 8010 & bash ./scripts/clients.sh fastify.md",
-    "fearless": "bash ./scripts/fearless.sh 8010 & bash ./scripts/clients.sh fearless.md"
+    "deno": "bash ./scripts/deno.sh 3008 & bash ./scripts/clients.sh 3008 deno",
+    "express": "bash ./scripts/express.sh 3006 & bash ./scripts/clients.sh 3006 express",
+    "fastify": "bash ./scripts/fastify.sh 3006 & bash ./scripts/clients.sh 3006 fastify",
+    "fearless": "bash ./scripts/fearless.sh 3007 & bash ./scripts/clients.sh 3007 fearless",
+    "node": "bash ./scripts/node.sh 3005 & bash ./scripts/clients.sh 3005 node"
   }
 }

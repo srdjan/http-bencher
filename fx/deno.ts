@@ -4,7 +4,6 @@ import * as flags from "https://deno.land/std/flags/mod.ts";
 const { args } = Deno;
 const DEFAULT_PORT = 8080;
 const argPort = flags.parse(args).port;
-console.log(argPort)
 const port = argPort ? Number(argPort) : DEFAULT_PORT;
 
 console.log(`Port: ${port}`);

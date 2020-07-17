@@ -1,1 +1,1 @@
-node ./fx/nodehttp.js
+node ./fx/node.js $1
