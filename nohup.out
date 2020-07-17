@@ -1,0 +1,13 @@
+[0m[38;5;10mCheck[0m file:///Users/srdjans/Code/http-bencher/fx/deno.ts
+[0m[1m[31merror[0m: Uncaught AddrInUse: Address already in use (os error 48)
+    at [1m[3m[90munwrapResponse[39m[23m[22m [90m([39m[90m$deno$/ops/dispatch_json.ts[39m[90m:[39m[90m42[39m[90m:[39m[90m11[39m[90m)[39m
+    at [1m[3m[90mObject.sendSync[39m[23m[22m [90m([39m[90m$deno$/ops/dispatch_json.ts[39m[90m:[39m[90m69[39m[90m:[39m[90m10[39m[90m)[39m
+    at [1m[3m[90mObject.listen[39m[23m[22m [90m([39m[90m$deno$/ops/net.ts[39m[90m:[39m[90m52[39m[90m:[39m[90m10[39m[90m)[39m
+    at [1m[3m[90mObject.listen[39m[23m[22m [90m([39m[90m$deno$/net.ts[39m[90m:[39m[90m156[39m[90m:[39m[90m22[39m[90m)[39m
+    at [1m[3mserve[23m[22m ([36mserver.ts[39m:[33m287[39m:[33m25[39m)
+    at [36mdeno.ts[39m:[33m3[39m:[33m16[39m
+[0m[38;5;10mCheck[0m file:///Users/srdjans/Code/http-bencher/fx/deno.ts
+[0m[1m[31merror[0m: [0m[1mTS2322[0m [ERROR]: Type 'string' is not assignable to type 'number'.
+const server = serve({ port: args[0] });
+[0m[31m                       ~~~~[0m
+    at [0m[38;5;14mfile:///Users/srdjans/Code/http-bencher/fx/deno.ts[0m:[0m[38;5;11m4[0m:[0m[38;5;11m24[0m

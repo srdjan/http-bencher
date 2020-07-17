@@ -1,0 +1,1 @@
+node ./fx/fastify.js $1

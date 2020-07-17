@@ -1,0 +1,1 @@
+deno run --allow-net ./fx/deno.ts --port=$1
