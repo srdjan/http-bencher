@@ -24,7 +24,11 @@
     "deno": "bash ./scripts/deno.sh 3008 & bash ./scripts/clients.sh 3008 deno",
     "express": "bash ./scripts/express.sh 3006 & bash ./scripts/clients.sh 3006 express",
     "fastify": "bash ./scripts/fastify.sh 3006 & bash ./scripts/clients.sh 3006 fastify",
+    "uws": "bash ./scripts/uws.sh 3017 & bash ./scripts/clients.sh 3017 uws",
     "fearless": "bash ./scripts/fearless.sh 3007 & bash ./scripts/clients.sh 3007 fearless",
     "node": "bash ./scripts/node.sh 3005 & bash ./scripts/clients.sh 3005 node"
+  },
+  "dependencies": {
+    "uwebsockets.js": "^18.3.3"
   }
 }
