@@ -8,15 +8,15 @@ fastify.get('/', (req, rep) => {
   rep.send('Hello, world!')
 })
 
-// fastify.get('/small', (req, rep) => {
-//   const small = require('../jsons/example1.json')
-//   rep.send(small)
-// })
+fastify.get('/small', (req, rep) => {
+  const small = require('../jsons/example1.json')
+  rep.send(small)
+})
 
-// fastify.get('/big', (req, rep) => {
-//   const big = require('../jsons/example2.json')
-//   rep.send(big)
-// })
+fastify.get('/big', (req, rep) => {
+  const big = require('../jsons/example2.json')
+  rep.send(big)
+})
 
 fastify.listen(port, (err, address) => {
   if (err) throw err

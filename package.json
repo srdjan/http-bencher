@@ -4,14 +4,6 @@
   "version": "0.0.1",
   "author": "SrdjanS <https://github.com/srdjan>",
   "homepage": "https://github.com/srdjan/bencher",
-  "devDependencies": {
-    "@fearless/cors": "0.1.4",
-    "@fearless/json": "0.1.0",
-    "@fearless/listen": "0.1.0",
-    "@fearless/fearless": "0.1.1",
-    "express": "4.17.1",
-    "fastify": "3.1.1"
-  },
   "keywords": [
     "http",
     "benchmark",
@@ -21,15 +13,20 @@
   ],
   "license": "MIT",
   "scripts": {
-    "deno": "bash ./scripts/deno.sh 3008 & bash ./scripts/clients.sh 3008 deno",
-    "express": "bash ./scripts/express.sh 3006 & bash ./scripts/clients.sh 3006 express",
-    "fastify": "bash ./scripts/fastify.sh 3006 & bash ./scripts/clients.sh 3006 fastify",
-    "uws": "bash ./scripts/uws.sh 3017 & bash ./scripts/clients.sh 3017 uws",
-    "uws-async": "bash ./scripts/uws-async.sh 3018 & bash ./scripts/clients.sh 3018 uws-async",
+    "deno": "bash ./scripts/deno.sh 3050 & bash ./scripts/clients.sh 3050 deno",
+    "express": "bash ./scripts/express.sh 3040 & bash ./scripts/clients.sh 3040 express",
+    "fastify": "bash ./scripts/fastify.sh 3031 & bash ./scripts/clients.sh 3031 fastify",
+    "uws": "bash ./scripts/uws.sh 3012 & bash ./scripts/clients.sh 3012 uws",
     "fearless": "bash ./scripts/fearless.sh 3007 & bash ./scripts/clients.sh 3007 fearless",
-    "node": "bash ./scripts/node.sh 3005 & bash ./scripts/clients.sh 3005 node"
+    "node": "bash ./scripts/node.sh 3024 & bash ./scripts/clients.sh 3024 node"
   },
   "dependencies": {
-    "uwebsockets.js": "^18.3.3"
+    "@fearless/cors": "0.1.4",
+    "@fearless/json": "0.1.0",
+    "@fearless/listen": "0.1.0",
+    "@fearless/fearless": "0.1.1",
+    "express": "4.17.1",
+    "fastify": "3.1.1",
+    "uwebsockets.js": "18.3.3"
   }
 }

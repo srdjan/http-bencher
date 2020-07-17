@@ -1,1 +1,1 @@
-node ./fx/uws.js $1
+node --experimental-modules --trace-warnings ./fx/uws-async.mjs $1
