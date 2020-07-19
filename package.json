@@ -13,12 +13,12 @@
   ],
   "license": "MIT",
   "scripts": {
-    "deno": "bash ./scripts/deno.sh 3081 & bash ./scripts/clients.sh 3081 deno",
+    "deno": "bash ./scripts/deno.sh 3089 & bash ./scripts/clients.sh 3089 deno",
     "express": "bash ./scripts/express.sh 3040 & bash ./scripts/clients.sh 3040 express",
     "fastify": "bash ./scripts/fastify.sh 3032 & bash ./scripts/clients.sh 3032 fastify",
     "uws": "bash ./scripts/uws.sh 3012 & bash ./scripts/clients.sh 3012 uws",
     "fearless": "bash ./scripts/fearless.sh 3007 & bash ./scripts/clients.sh 3007 fearless",
-    "node": "bash ./scripts/node.sh 3024 & bash ./scripts/clients.sh 3024 node"
+    "node": "bash ./scripts/node.sh 3061 & bash ./scripts/clients.sh 3061 node"
   },
   "dependencies": {
     "@fearless/cors": "0.1.4",

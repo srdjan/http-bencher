@@ -7,32 +7,40 @@ const argPort = flags.parse(args).port;
 const port = argPort ? Number(argPort) : DEFAULT_PORT;
 console.log(`Port: ${port}`);
 
-async function serveFile(req: ServerRequest, filePath: string): Promise<Response> {
-  const file = await Deno.open(filePath);
-  req.done.then(() => {
-    file.close();
-  });
-  return {
-    status: 200,
-    body: file
-  };
+async function readJson(filePath: string): Promise<string> {
+  const decoder = new TextDecoder("utf-8");
+
+  try {
+    const content = decoder.decode(await Deno.readFile(filePath));
+    return JSON.stringify(content);
+  } catch (err) {
+    err.message = `${filePath}: ${err.message}`;
+    throw err;
+  }
 }
 
 const server = serve({ port: port });
 
 for await (const req of server) {
-  let response;
+  let response: Response = {
+    status: 404,
+    body: "Error: Route NOT found"
+  };
 
   if (req.url.includes('/small')) {
-    response = await serveFile(req, './jsons/example1.json');
+    response = {
+      status: 200,
+      body: await readJson('./jsons/example1.json')
+    }
   }
   else if (req.url.includes('/big')) {
-    response = await serveFile(req, './jsons/example2.json');
+    response = {
+      status: 200,
+      body: await readJson('./jsons/example2.json')
+    }
   }
   else {
-    req.respond({ body: "Hello World\n" });
-    continue;
-    // response = await serveFile(req, './jsons/hello.json');
+    response = { status: 200, body: "Hello World\n" };
   }
 
   try {
