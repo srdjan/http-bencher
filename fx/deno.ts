@@ -1,4 +1,4 @@
-import { serve, ServerRequest, Response } from "https://deno.land/std/http/server.ts";
+import { serve, ServerRequest, Response } from "https://deno.land/std@0.61.0/http/server.ts";
 import * as flags from "https://deno.land/std/flags/mod.ts";
 
 const { args } = Deno;
@@ -10,9 +10,10 @@ console.log(`Port: ${port}`);
 async function readJson(filePath: string): Promise<string> {
   const decoder = new TextDecoder("utf-8");
 
+  const content = decoder.decode(await Deno.readFile(filePath));
+
   try {
-    const content = decoder.decode(await Deno.readFile(filePath));
-    return JSON.stringify(content);
+    return JSON.parse(content);
   } catch (err) {
     err.message = `${filePath}: ${err.message}`;
     throw err;
@@ -50,4 +51,3 @@ for await (const req of server) {
     break;
   }
 }
-
