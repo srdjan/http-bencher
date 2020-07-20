@@ -1,10 +1,12 @@
+import { createRequire } from 'https://deno.land/std/node/module.ts'
+const require = createRequire(import.meta.url)
 const uWS = require('uWebSockets.js')
 
 var myArgs = process.argv.slice(2)
 var port = Number(myArgs[0])
 console.log('Port: ', port)
 
-uWS.App().get('/', async (res) => {
+uWS.App().get('/', async (res:any) => {
   res.onAborted(() => res.aborted = true);
 
   let r = 'Hello World Async!';
@@ -12,7 +14,7 @@ uWS.App().get('/', async (res) => {
   if (!res.aborted) {
     res.end(r);
   }
-}).listen(port, (token) => {
+}).listen(port, (token:any) => {
   if (token) {
     console.log('Listening to port ' + port);
   } else {
