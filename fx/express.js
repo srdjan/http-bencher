@@ -1,4 +1,5 @@
 const express = require('express')
+const fs = require('fs')
 
 var myArgs = process.argv.slice(2)
 var port = Number(myArgs[0])
@@ -9,13 +10,21 @@ app.get('/', function(req, res) {
   res.send('Hello, world!')
 })
 app.get('/small', (req, res) => {
-  const small = require('../jsons/example1.json')
-  res.send(small)
+  fs.readFile('./jsons/example1.json', 'utf8', function (err, data) {
+    if (err) {
+      return console.log(err)
+    }
+    res.send(data)
+  })
 })
 
 app.get('/big', (req, res) => {
-  const big = require('../jsons/example2.json')
-  res.send(big)
+  fs.readFile('./jsons/example2.json', 'utf8', function (err, data) {
+    if (err) {
+      return console.log(err)
+    }
+    res.send(data)
+  })
 })
 
 app.listen(port)
