@@ -1,6 +1,6 @@
 import { createRequire } from 'https://deno.land/std/node/module.ts'
-const require = createRequire(import.meta.url)
-const uWS = require('uWebSockets.js')
+const require1 = createRequire(import.meta.url)
+const uWS = require1('uWebSockets.js')
 
 var myArgs = process.argv.slice(2)
 var port = Number(myArgs[0])
